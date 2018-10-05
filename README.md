@@ -4,3 +4,5 @@
 [![Build Status](https://img.shields.io/travis/mgenware/mean-bimap.svg?style=flat-square&label=Build+Status)](https://travis-ci.org/mgenware/mean-bimap)
 [![npm version](https://img.shields.io/npm/v/mean-bimap.svg?style=flat-square)](https://npmjs.com/package/mean-bimap)
 [![Node.js Version](http://img.shields.io/node/v/mean-bimap.svg?style=flat-square)](https://nodejs.org/en/)
+
+Simple BiMap(Bidirectional Map) in JavaScript.

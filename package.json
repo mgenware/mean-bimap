@@ -1,7 +1,7 @@
 {
   "name": "mean-bimap",
   "version": "0.0.1",
-  "description": "<NoDescription>",
+  "description": "Simple BiMap(Bidirectional Map) in JavaScript",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "author": "Mgen (https://www.mgenware.com)",
