@@ -71,6 +71,12 @@ export default class BiMap {
     return Object.keys(this._vkMap);
   }
 
+  invert() {
+    const t = this._kvMap;
+    this._kvMap = this._vkMap;
+    this._vkMap = t;
+  }
+
   private deletePair(k: string, v: string) {
     delete this._kvMap[k];
     delete this._vkMap[v];

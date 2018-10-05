@@ -49,6 +49,16 @@ test('keys/values', () => {
     ['a', 'b'],
     ['x', 'y'],
   ]);
-  expect(m.keys().sort()).toEqual(['a', 'b'].sort());
-  expect(m.values().sort()).toEqual(['x', 'y'].sort());
+  expect(m.keys().sort()).toEqual(['a', 'x'].sort());
+  expect(m.values().sort()).toEqual(['b', 'y'].sort());
+});
+
+test('invert', () => {
+  const m = new BiMap([
+    ['a', 'b'],
+    ['x', 'y'],
+  ]);
+  m.invert();
+  expect(m.values().sort()).toEqual(['a', 'x'].sort());
+  expect(m.keys().sort()).toEqual(['b', 'y'].sort());
 });
