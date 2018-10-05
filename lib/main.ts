@@ -1,7 +1,7 @@
 export default class BiMap {
-  private _kvMap: { [k: string]: string } = {};
-  private _vkMap: { [k: string]: string } = {};
-  private _length = 0;
+  private kvMap: { [k: string]: string|undefined } = {};
+  private vkMap: { [k: string]: string|undefined } = {};
+  private mLength = 0;
 
   constructor(pairs?: Array<[string, string]>) {
     if (pairs && pairs.length) {
@@ -12,24 +12,24 @@ export default class BiMap {
   }
 
   get length(): number {
-    return this._length;
+    return this.mLength;
   }
 
   keyExists(k: string): boolean {
-    return this._kvMap[k] !== undefined;
+    return this.kvMap[k] !== undefined;
   }
 
   valueExists(v: string): boolean {
-    return this._vkMap[v] !== undefined;
+    return this.vkMap[v] !== undefined;
   }
 
   set(k: string, v: string): boolean {
     if (this.keyExists(k)) {
       return false;
     }
-    this._kvMap[k] = v;
-    this._vkMap[v] = k;
-    this._length++;
+    this.kvMap[k] = v;
+    this.vkMap[v] = k;
+    this.mLength++;
     return true;
   }
 
@@ -38,11 +38,11 @@ export default class BiMap {
   }
 
   valueByKey(k: string): string|undefined {
-    return this._kvMap[k];
+    return this.kvMap[k];
   }
 
   keyByValue(v: string): string|undefined {
-    return this._vkMap[v];
+    return this.vkMap[v];
   }
 
   deleteByKey(k: string): boolean {
@@ -64,22 +64,22 @@ export default class BiMap {
   }
 
   keys(): string[] {
-    return Object.keys(this._kvMap);
+    return Object.keys(this.kvMap);
   }
 
   values(): string[] {
-    return Object.keys(this._vkMap);
+    return Object.keys(this.vkMap);
   }
 
   invert() {
-    const t = this._kvMap;
-    this._kvMap = this._vkMap;
-    this._vkMap = t;
+    const t = this.kvMap;
+    this.kvMap = this.vkMap;
+    this.vkMap = t;
   }
 
   private deletePair(k: string, v: string) {
-    delete this._kvMap[k];
-    delete this._vkMap[v];
-    this._length--;
+    delete this.kvMap[k];
+    delete this.vkMap[v];
+    this.mLength--;
   }
 }
