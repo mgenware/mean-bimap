@@ -1,6 +1,6 @@
 {
   "name": "mean-bimap",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Simple BiMap(Bidirectional Map) in JavaScript",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -8,7 +8,8 @@
   "homepage": "https://github.com/mgenware/mean-bimap",
   "bugs": "https://github.com/mgenware/mean-bimap/issues",
   "keywords": [
-    "map", "bidirectional map"
+    "map",
+    "bidirectional map"
   ],
   "repository": {
     "type": "git",
